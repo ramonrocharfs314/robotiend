@@ -1,0 +1,25 @@
+/* src/App.css ou um CSS global */
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #f0f0f0; /* cor de fundo base */
+
+  /* Cria o padrão de quadrados alternados */
+  background-image: 
+    linear-gradient(45deg, #4caf50 25%, transparent 25%),
+    linear-gradient(-45deg, #4caf50 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #4caf50 75%),
+    linear-gradient(-45deg, transparent 75%, #4caf50 75%);
+
+  background-size: 50px 50px; /* tamanho do quadrado */
+  background-position: 0 0, 0 25px, 25px -25px, -25px 0px;
+}
+
+@keyframes moveBackground {
+  from { background-position: 0 0, 0 25px, 25px -25px, -25px 0; }
+  to { background-position: 50px 0, 50px 25px, 75px -25px, 25px 0; }
+}
+
+body {
+  animation: moveBackground 10s linear infinite; /* ajusta a duração */
+}
